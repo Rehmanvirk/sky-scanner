@@ -1,0 +1,46 @@
+.weather-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 300px;
+    margin: 20px auto;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+}
+
+.weather-card h2 {
+    font-size: 1.5rem;
+    color: #333333;
+    margin-bottom: 10px;
+}
+
+.weather-card .temperature {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #007BFF;
+    margin: 10px 0;
+}
+
+.weather-card .description {
+    font-size: 1rem;
+    color: #666666;
+    margin-bottom: 15px;
+}
+
+.weather-card .details {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: #555555;
+}
+
+.weather-card .details div {
+    text-align: center;
+}
+
+.weather-card .details div span {
+    display: block;
+    font-weight: bold;
+    color: #333333;
+}
