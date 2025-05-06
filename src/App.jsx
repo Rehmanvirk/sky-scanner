@@ -3,7 +3,7 @@ import SearchBar from "./components/SearchBar";
 // import WeatherCard from "./components/WeatherCard";
 // import {Wcard} from "./components/Wcard"
 import {Wcard} from "./components/MyCard"
-import { fetchWeather } from "./weatherService";
+import { fetchWeather } from "./weatherservice";
 
 import "./App.css";
 
