@@ -1,3 +1,5 @@
+```css
+/* App.css - Main styles */
 :root {
   --primary-color: #4361ee;
   --secondary-color: #3f37c9;
@@ -24,16 +26,15 @@ body {
 }
 
 .app {
-  position: relative;
-  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 100vh;
   padding: 20px;
+  position: relative;
   overflow-x: hidden;
 }
 
-/* Container */
 .container {
   width: 100%;
   max-width: 1000px;
@@ -73,7 +74,12 @@ body {
 }
 
 @media (max-width: 480px) {
+  .container {
+    padding: 10px;
+  }
+  
   .weather-app {
     padding: 15px;
   }
 }
+```

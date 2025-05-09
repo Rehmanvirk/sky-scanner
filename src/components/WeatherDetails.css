@@ -1,0 +1,117 @@
+
+/* WeatherDetails.css */
+.weather-details {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    animation: fadeUp 0.8s ease-out;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    padding: 15px 10px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.detail-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
+}
+
+.detail-icon {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.detail-label {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+.detail-value {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* UV Index Styling */
+.uv-indicator {
+    display: inline-block;
+    width: 30px;
+    height: 8px;
+    border-radius: 4px;
+    margin-left: 5px;
+    background: linear-gradient(to right, 
+        #3EC70B, /* Low - Green */
+        #FFD24C, /* Moderate - Yellow */
+        #F24C3D, /* High - Red */
+        #9C2C77  /* Very High - Purple */
+    );
+}
+
+.uv-level {
+    position: relative;
+}
+
+.uv-level::after {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 12px;
+    background: white;
+    border-radius: 4px;
+    bottom: -2px;
+    transform: translateX(-50%);
+    transition: left 0.5s ease;
+}
+
+/* Wind Direction Arrow */
+.wind-direction {
+    display: inline-block;
+    margin-left: 5px;
+    transform-origin: center;
+    transition: transform 1s ease;
+    font-size: 1.2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .weather-details {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .weather-details {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .detail-item {
+        padding: 10px;
+    }
+
+    .detail-value {
+        font-size: 1rem;
+    }
+}
