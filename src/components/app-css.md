@@ -1,5 +1,4 @@
-```css
-/* App.css - Main styles */
+
 :root {
   --primary-color: #4361ee;
   --secondary-color: #3f37c9;

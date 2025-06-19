@@ -6,6 +6,7 @@ const SearchBox = ({ onSearch, onLocationClick }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
     if (city.trim()) {
       onSearch(city);
     }

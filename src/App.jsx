@@ -10,17 +10,14 @@ import BackgroundAnimation from './components/BackgroundAnimation';
 import './App.css';
 
 function App() {
-  // API Key - Replace with your own OpenWeatherMap API key
   const API_KEY = "e995d9b4b1138ac7f5aaef646fb9944c";
   const BASE_URL = "https://api.openweathermap.org/data/2.5/weather";
 
-  // State
   const [weatherData, setWeatherData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState({ show: false, message: '' });
-  const [currentUnit, setCurrentUnit] = useState('metric'); // 'metric' for Celsius, 'imperial' for Fahrenheit
+  const [currentUnit, setCurrentUnit] = useState('metric'); 
 
-  // Fetch weather data by city name
   const fetchWeatherData = async (city) => {
     setLoading(true);
     setError({ show: false, message: '' });
@@ -46,7 +43,6 @@ function App() {
     }
   };
 
-  // Fetch weather by coordinates
   const fetchWeatherByCoords = async (lat, lon) => {
     setLoading(true);
     setError({ show: false, message: '' });
@@ -72,7 +68,6 @@ function App() {
     }
   };
 
-  // Get Current Location
   const getCurrentLocation = () => {
     if (navigator.geolocation) {
       setLoading(true);
@@ -98,13 +93,11 @@ function App() {
     }
   };
 
-  // Toggle Temperature Unit
   const toggleTemperatureUnit = (checked) => {
     const newUnit = checked ? 'imperial' : 'metric';
     setCurrentUnit(newUnit);
   };
 
-  // Re-fetch data when unit changes
   useEffect(() => {
     if (weatherData) {
       if (weatherData.coord) {
@@ -115,14 +108,12 @@ function App() {
     }
   }, [currentUnit]);
 
-  // Load default city or get user location on initial load
   useEffect(() => {
     getCurrentLocation();
     
-    // If geolocation fails or takes too long, load a default city
     const timer = setTimeout(() => {
       if (!weatherData) {
-        fetchWeatherData('London');
+        fetchWeatherData('Lahore');
       }
     }, 3000);
     

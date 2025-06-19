@@ -24,7 +24,7 @@ const CurrentWeather = ({ data, unit }) => {
           {/* {formatDate(data.dt + data.timezone)} */}
         </div>
         <div className="temperature">
-          {temp}
+          {temp}<span>°{unit === 'metric' ? 'C' : 'F'}</span>
         </div>
         <div className="weather-description">
           <span>{data.weather[0].description}</span>

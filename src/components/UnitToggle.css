@@ -1,5 +1,4 @@
 
-/* UnitToggle.css */
 .unit-toggle {
     margin-top: 20px;
     display: flex;
@@ -61,7 +60,6 @@ input:checked + .slider:before {
     transform: translateX(30px);
 }
 
-/* CSS for unit labels */
 .unit-active {
     font-weight: bold;
     color: var(--accent-color);

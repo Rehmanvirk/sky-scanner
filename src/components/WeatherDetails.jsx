@@ -5,7 +5,6 @@ import './WeatherDetails.css';
 const WeatherDetails = ({ data, unit }) => {
   if (!data) return null;
 
-  // Calculate values based on unit
   const windSpeed = unit === 'metric' ? 
     `${(data.wind.speed * 3.6).toFixed(1)} km/h` : 
     `${(data.wind.speed * 2.237).toFixed(1)} mph`;
@@ -14,18 +13,16 @@ const WeatherDetails = ({ data, unit }) => {
     `${(data.visibility / 1000).toFixed(1)} km` : 
     `${(data.visibility / 1609).toFixed(1)} mi`;
   
-  // Mock UV Index (not available in the free OpenWeatherMap API)
-  const mockUVIndex = Math.floor(Math.random() * 11);
+  const mockUVIndex = Math.floor(Math.random() * 8);
 
-  // Get UV color and position
   const getUVColor = (uvIndex) => {
-    if (uvIndex < 3) return '#3EC70B'; // Low - Green
-    if (uvIndex < 6) return '#FFD24C'; // Moderate - Yellow
-    if (uvIndex < 8) return '#F24C3D'; // High - Red
-    return '#9C2C77'; // Very High - Purple
+    if (uvIndex < 3) return '#3EC70B'; 
+    if (uvIndex < 6) return '#FFD24C'; 
+    if (uvIndex < 8) return '#F24C3D'; 
+    return '#9C2C77'; 
   };
 
-  const uvPercentage = Math.min((mockUVIndex / 11) * 100, 100);
+  const uvPercentage = Math.min((mockUVIndex / 8) * 100, 100);
   const uvColor = getUVColor(mockUVIndex);
 
   return (
